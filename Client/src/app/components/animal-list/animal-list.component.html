@@ -1,0 +1,17 @@
+<div class="col-md-4" *ngFor="let animal of animals">
+  <div class="card text-center">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      {{animal.name}}
+      <button class="btn btn-danger" (click)="deleteAnimal(animal.id)">
+        <i class="far fa-trash-alt"></i>
+      </button>
+    </div>
+    <div class="card-body">      
+      <p>Species: {{animal.species}}</p>
+      <p>Age: {{animal.age}}</p>
+      <a [routerLink]="['/animals/edit', animal.id]" class="btn btn-info btn-block">
+        Edit Animal
+      </a>
+    </div>
+  </div>
+</div>
